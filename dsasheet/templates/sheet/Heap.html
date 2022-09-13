@@ -1,0 +1,131 @@
+{% extends 'users/base.html' %}
+{% block content %}
+
+
+<div class="container" align="center">
+    <h1>Heap</h1>
+</div>
+<div class="container-fluid">
+
+    {% include 'users/tabs.html' %}
+
+</div>
+
+<hr>
+
+<form action="" method="POST">
+    {% csrf_token %}
+
+    <div align="right" style="position: absolute; top: 120px; right: 16px; font-size: 18px;">
+        <input class="btn btn-primary" type="submit" value="Save">
+    </div>
+    <div class="container-fluid">
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="easy-tab-pane" role="tabpanel" aria-labelledby="easy-tab"
+                tabindex="0">
+                <table class="table table-primary">
+                    <thead>
+                        <tr>
+                            <td>#</td>
+                            <td>Question</td>
+                            <td>Solved</td>
+                            <td>Revised</td>
+                            <td>Language</td>
+                            <td>Discuss</td>
+                            <td>Editorial</td>
+                            <td>Notes</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i,j in easyques.items%}
+                        <tr>
+                            <td>{{i}}</td>
+                            <td><a href={{j|first}} target="_blank"
+                                    rel="noopener noreferrer">{{j|slice:"1:2"|first}}</a>
+                            </td>
+                            <td>{{j|slice:"2:3"|first}}</td>
+                            <td>{{j|slice:"3:4"|first}}</td>
+                            <td>{{j|slice:"4:5"|first}}</td>
+                            <td><a href="#">Discuss</a></td>
+                            <td><a href="#">Editorial</a></td>
+                            <td>{{j|slice:"5:6"|first}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="medium-tab-pane" role="tabpanel" aria-labelledby="medium-tab" tabindex="0">
+                <table class="table table-primary">
+                    <thead>
+                        <tr>
+                            <td>#</td>
+                            <td>Question</td>
+                            <td>Solved</td>
+                            <td>Revised</td>
+                            <td>Language</td>
+                            <td>Discuss</td>
+                            <td>Editorial</td>
+                            <td>Notes</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i,j in medques.items%}
+                        <tr>
+                            <td>{{i}}</td>
+                            <td><a href={{j|first}} target="_blank"
+                                    rel="noopener noreferrer">{{j|slice:"1:2"|first}}</a>
+                            </td>
+                            <td>{{j|slice:"2:3"|first}}</td>
+                            <td>{{j|slice:"3:4"|first}}</td>
+                            <td>{{j|slice:"4:5"|first}}</td>
+                            <td><a href="#">Discuss</a></td>
+                            <td><a href="#">Editorial</a></td>
+                            <td>{{j|slice:"5:6"|first}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="hard-tab-pane" role="tabpanel" aria-labelledby="hard-tab" tabindex="0">
+                <table class="table table-primary">
+                    <thead>
+                        <tr>
+                            <td>#</td>
+                            <td>Question</td>
+                            <td>Solved</td>
+                            <td>Revised</td>
+                            <td>Language</td>
+                            <td>Discuss</td>
+                            <td>Editorial</td>
+                            <td>Notes</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i,j in hardques.items%}
+                        <tr>
+                            <td>{{i}}</td>
+                            <td><a href={{j|first}} target="_blank"
+                                    rel="noopener noreferrer">{{j|slice:"1:2"|first}}</a>
+                            </td>
+                            <td>{{j|slice:"2:3"|first}}</td>
+                            <td>{{j|slice:"3:4"|first}}</td>
+                            <td>{{j|slice:"4:5"|first}}</td>
+                            <td><a href="#">Discuss</a></td>
+                            <td><a href="#">Editorial</a></td>
+                            <td>{{j|slice:"5:6"|first}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</form>
+
+<hr>
+
+<p align="right">Made By: Prabhnoor Singh</p>
+
+<hr>
+
+{% endblock %}
