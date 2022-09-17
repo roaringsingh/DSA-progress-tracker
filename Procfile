@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn topsisapp.wsgi
+web: gunicorn trakerapp.wsgi
